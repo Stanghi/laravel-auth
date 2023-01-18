@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use SebastianBergmann\CodeCoverage\Report\Xml\Project;
+use App\Models\Project;
 
 class ProjectsController extends Controller
 {
@@ -15,7 +15,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return view('admin.projects.index');
+        $projects = Project::all();
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
