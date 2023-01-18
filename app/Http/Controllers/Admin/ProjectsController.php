@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
+use function PHPUnit\Framework\returnSelf;
+
 class ProjectsController extends Controller
 {
     /**
@@ -15,7 +17,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::orderBy('id', 'desc')->paginate(15);
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -48,7 +50,8 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return view('admin.projects.show', compact('project'));
     }
 
     /**

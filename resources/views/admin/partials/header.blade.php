@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url('/admin') }}">
             <div class="logo_laravel text-white">
                 Portfolio track
             </div>

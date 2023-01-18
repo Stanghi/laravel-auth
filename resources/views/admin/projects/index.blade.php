@@ -19,7 +19,8 @@
 
                             <div class="d-flex justify-content-around">
 
-                                <a href="#" title="Show" class="btn btn-outline-primary">
+                                <a href="{{ route('admin.projects.show', $project) }}" title="Show"
+                                    class="btn btn-outline-primary">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
 
@@ -35,6 +36,8 @@
                 </div>
             @endforeach
         </div>
+
+        <div class="d-flex justify-content-center"> {{ $projects->links() }} </div>
 
     </div>
 @endsection
