@@ -24,8 +24,8 @@
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
 
-                                <a href="#" title="Edit" class="btn btn-outline-primary"><i
-                                        class="fa-solid fa-pen"></i>
+                                <a href="{{ route('admin.projects.edit', $project) }}" title="Edit"
+                                    class="btn btn-outline-primary"><i class="fa-solid fa-pen"></i>
                                 </a>
 
                                 @include('admin.partials.form-delete', ['project' => $project])
