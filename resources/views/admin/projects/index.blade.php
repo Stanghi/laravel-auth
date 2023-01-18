@@ -9,6 +9,13 @@
 
         <h1 class="my-5">Projects</h1>
 
+        @if (session('deleted'))
+            <div class="alert alert-primary" role="alert">
+                <i class="fa-solid fa-circle-check"></i>
+                {{ session('deleted') }}
+            </div>
+        @endif
+
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
             @foreach ($projects as $project)
                 <div class="col p-3">
