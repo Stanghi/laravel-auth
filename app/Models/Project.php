@@ -13,17 +13,12 @@ class Project extends Model
     protected $fillable = [
         'title',
         'client_name',
+        'slug'
     ];
 
     public static function generateSlug($string)
     {
         $slug = Str::slug($string, '-');
-        /*
-            - salvare lo slug originale
-            - controllare se esiste
-            - generarne uno con in aggiunta un contataore
-            -- se esiste generarne un'altro e così via fino a che se ne trova uno non esistente
-        */
         $original_slug = $slug;
         $c = 1;
         $exists = Project::where('slug', $slug)->first();

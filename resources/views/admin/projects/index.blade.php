@@ -7,7 +7,12 @@
 @section('content')
     <div class="container">
 
-        <h1 class="my-5">Projects</h1>
+        <div class="d-flex align-items-center justify-content-between">
+            <h1 class="my-5">Projects</h1>
+            <a href="{{ route('admin.projects.create') }}" title="Create" class="btn btn-outline-primary"><i
+                    class="fa-solid fa-plus"></i>
+            </a>
+        </div>
 
         @if (session('deleted'))
             <div class="alert alert-primary" role="alert">
