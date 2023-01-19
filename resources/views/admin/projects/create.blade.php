@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    | Admin Project-Create
+@endsection
+
 @section('content')
     <div class="container">
+
+        @include('admin.partials.action-in-page')
 
         @if ($errors->any())
             <div class="alert alert-danger m-5" role="alert">
@@ -28,10 +34,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="cover_image" class="form-label">Cover image</label>
-                <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
-                    name="cover_image" placeholder="Add URL for image...">
-                @error('cover_image')
+                <label for="client_name" class="form-label">Client name *</label>
+                <input type="text" class="form-control @error('client_name') is-invalid @enderror" id="client_name"
+                    name="client_name" placeholder="Add client_name...">
+                @error('client_name')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -39,10 +45,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="client_name" class="form-label">Client name *</label>
-                <input type="text" class="form-control @error('client_name') is-invalid @enderror" id="client_name"
-                    name="client_name" placeholder="Add client_name...">
-                @error('client_name')
+                <label for="cover_image" class="form-label">Cover image</label>
+                <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
+                    name="cover_image" placeholder="Add URL for image...">
+                @error('cover_image')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

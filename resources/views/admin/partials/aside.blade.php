@@ -1,17 +1,22 @@
 <nav>
-    <ul class="p-0 mt-5">
-        <li class="mb-2">
-            <a class="sc-nav-link " href="{{ route('admin.dashboard') }}">
-                <i class="fa-solid fa-chart-line me-1"></i>
-                Dashboard
+    <ul>
+        <li class="{{ request()->segment(2) == '' ? 'active' : '' }}">
+            <a href="{{ route('admin.dashboard') }}">
+                <i class="fa-solid fa-chart-pie"></i>Dashboard
             </a>
         </li>
 
-        <li class="mb-2">
-            <a class="sc-nav-link" href="{{ route('admin.projects.index') }}">
-                <i class="fa-regular fa-newspaper me-1"></i>
-                Projects
+        <li class="{{ request()->segment(2) == 'projects' ? 'active' : '' }}">
+            <a href="{{ route('admin.projects.index') }}">
+                <i class="fa-solid fa-hammer"></i>Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-question"></i>lorem
             </a>
         </li>
     </ul>
 </nav>
+{{-- class="debug" --}}

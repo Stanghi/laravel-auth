@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    | Admin
+    | Admin Projects
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@
             </div>
         @endif
 
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 mb-5">
             @foreach ($projects as $project)
                 <div class="col p-3">
                     <div class="card">

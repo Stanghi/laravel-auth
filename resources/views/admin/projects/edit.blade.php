@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    | Admin Project-Edit
+@endsection
+
 @section('content')
     <div class="container">
+
+        @include('admin.partials.action-in-page')
 
         @if ($errors->any())
             <div class="alert alert-danger m-5" role="alert">
@@ -29,18 +35,6 @@
             </div>
 
             <div class="mb-3">
-                <label for="cover_image" class="form-label">Cover image</label>
-                <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
-                    name="cover_image" value="{{ old('cover_image', $project->cover_image) }}"
-                    placeholder="Add URL for image...">
-                @error('cover_image')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
                 <label for="client_name" class="form-label">Client name *</label>
                 <input type="text" class="form-control @error('client_name') is-invalid @enderror" id="client_name"
                     name="client_name" value="{{ old('client_name', $project->client_name) }}"
@@ -53,9 +47,20 @@
             </div>
 
             <div class="mb-3">
-                <label for="summary" class="form-label">summary</label>
-                <textarea class="form-control" id="summary" name="summary" value="{{ old('summary') }}" rows="5"
-                    placeholder="Add summary..."></textarea>
+                <label for="cover_image" class="form-label">Cover image</label>
+                <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
+                    name="cover_image" value="{{ old('cover_image', $project->cover_image) }}"
+                    placeholder="Add URL for image...">
+                @error('cover_image')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="summary" class="form-label">Summary</label>
+                <textarea class="form-control" id="summary" name="summary" rows="5" placeholder="Add summary...">{{ old('summary', $project->summary) }}</textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit

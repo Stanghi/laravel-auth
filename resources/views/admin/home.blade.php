@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    | Admin
+    | Admin Dashboard
 @endsection
 
 @section('content')

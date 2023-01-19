@@ -27,25 +27,22 @@
 <body>
     <div id="app">
 
-
         @include('admin.partials.header')
 
         <div class="container-fluid main-wrapper">
-            <div class="row h-100">
+            <div class="row">
                 @auth
-                    <div class="col-1 h-100 bg-dark">
+                    <div class="col-1 bg-primary aside">
                         @include('admin.partials.aside')
                     </div>
                 @endauth
-                <div class="@auth col-11 @endauth">
+                <div class="@auth col-11 @endauth content">
                     <main>
                         @yield('content')
                     </main>
                 </div>
             </div>
         </div>
-
-
 
     </div>
 </body>

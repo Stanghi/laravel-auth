@@ -16,9 +16,10 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::orderBy('id', 'desc')->paginate(15);
+        $routeName = $request->route()->getName();
+        $projects = Project::orderBy('id', 'desc')->paginate(10);
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -38,7 +39,7 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProjectRequest $request, Project $project)
+    public function store(ProjectRequest $request)
     {
         $form_data = $request->all();
 

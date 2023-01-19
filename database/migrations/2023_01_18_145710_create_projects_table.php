@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('client_name');
             $table->text('summary')->nullable();
-            $table->text('cover_image')->nullable();
+            $table->string('cover_image')->nullable();
             $table->timestamps();
         });
     }
