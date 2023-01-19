@@ -1,12 +1,12 @@
 <nav>
     <ul>
-        <li class="{{ request()->segment(2) == '' ? 'active' : '' }}">
+        <li class="{{ request()->routeIs('admin.dashboard') == 'admin' ? 'active' : '' }}">
             <a href="{{ route('admin.dashboard') }}">
                 <i class="fa-solid fa-chart-pie"></i>Dashboard
             </a>
         </li>
 
-        <li class="{{ request()->segment(2) == 'projects' ? 'active' : '' }}">
+        <li class="{{ request()->routeIs('admin.projects.index') == 'projects' ? 'active' : '' }}">
             <a href="{{ route('admin.projects.index') }}">
                 <i class="fa-solid fa-hammer"></i>Projects
             </a>
