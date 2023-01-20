@@ -68,3 +68,7 @@ header nav {
         object-fit: contain;
     }
 }
+
+.ck-editor__editable[role="textbox"] {
+    min-height: 300px;
+}
