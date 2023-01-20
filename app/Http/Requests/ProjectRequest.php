@@ -26,6 +26,7 @@ class ProjectRequest extends FormRequest
         return [
             'title' => 'required',
             'client_name' => 'required',
+            'cover_image' => 'nullable|image|max:3000'
         ];
     }
 }

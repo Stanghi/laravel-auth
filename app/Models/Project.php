@@ -15,7 +15,8 @@ class Project extends Model
         'client_name',
         'slug',
         'cover_image',
-        'summary'
+        'summary',
+        'cover_image_original'
     ];
 
     public static function generateSlug($string)

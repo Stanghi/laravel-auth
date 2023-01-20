@@ -9,7 +9,13 @@
 
         @include('admin.partials.action-in-page')
 
+        @if ($project->cover_image)
+            <img src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->cover_image_original }}">
+            <p>{{ $project->cover_image_original }}</p>
+        @endif
         <img src="{{ $project->cover_image }}" alt="{{ $project->title }}">
+
+
         <p>Client name: {{ $project->client_name }}</p>
         <p>{{ $project->summary }}</p>
     </div>

@@ -22,7 +22,6 @@ class ProjectsTableSeeder extends Seeder
             $new_project->slug = Project::generateSlug($new_project->title);
             $new_project->client_name = $faker->word();
             $new_project->summary = $faker->paragraph(5);
-            $new_project->cover_image = 'https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1';
             $new_project->save();
         }
     }
