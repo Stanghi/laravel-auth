@@ -25,7 +25,11 @@
             @foreach ($projects as $project)
                 <div class="col p-3">
                     <div class="card">
-                        <img src="{{ $project->cover_image }}" class="card-img-top" alt="{{ $project->title }}">
+                        @if ($project->cover_image)
+                            <img src="{{ asset('storage/' . $project->cover_image) }}"
+                                alt="{{ $project->cover_image_original }}">
+                        @endif
+
                         <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text fw-bold">{{ $project->title }}</p>
 
