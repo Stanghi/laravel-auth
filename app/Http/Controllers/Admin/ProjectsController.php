@@ -100,6 +100,15 @@ class ProjectsController extends Controller
             $form_data['slug'] = $project->slug;
         }
 
+        if (array_key_exists('cover_image', $form_data)) {
+            if ($project->cover_image) {
+                Storage::disk('public')->delete($project->cover_image);
+            }
+
+            $form_data['cover_image_original'] = $request->file('cover_image')->getClientOriginalName();
+            $form_data['cover_image'] = Storage::put('uploads', $form_data['cover_image']);
+        }
+
         $project->update($form_data);
         return redirect()->route('admin.projects.show', $project);
     }
@@ -112,6 +121,9 @@ class ProjectsController extends Controller
      */
     public function destroy(Project $project)
     {
+        if ($project->cover_image) {
+            Storage::disk('public')->delete($project->cover_image);
+        }
         $project->delete();
         return redirect()->route('admin.projects.index')->with('deleted', "$project->title eliminato correttamente");
     }

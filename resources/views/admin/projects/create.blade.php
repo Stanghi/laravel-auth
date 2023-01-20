@@ -48,9 +48,11 @@
                 <label for="cover_image" class="form-label">Cover image</label>
                 <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
                     name="cover_image" placeholder="Add image..." onchange="showImage(event)">
-                <div class="card my-3">
+
+                <div class="cover-image">
                     <img id="output-image" src="" alt="">
                 </div>
+
                 @error('cover_image')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -71,6 +73,14 @@
     </div>
 
     <script>
+        ClassicEditor
+            .create(document.querySelector('#summary'), {
+                toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
         function showImage(event) {
             const tagImage = document.getElementById('output-image');
             tagImage.src = URL.createObjectURL(event.target.files[0]);
